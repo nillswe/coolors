@@ -94,11 +94,11 @@ export default function Home() {
           ))}
         </div>
 
-        <div className='bg-base-100 rounded-lg p-5 grid sm:grid-cols-4 md:grid-cols-6 gap-2 mt-5'>
+        <div className='bg-base-100 rounded-lg p-5 grid grid-cols-4 md:grid-cols-6 gap-2 mt-5'>
           {colorList.map(color => (
             <div
               key={color.hexadecimal}
-              className='h-20 rounded-xl'
+              className='h-32 rounded-xl'
               style={{background: color.hexadecimal}}></div>
           ))}
         </div>

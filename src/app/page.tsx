@@ -62,7 +62,7 @@ export default function Home() {
 
   return (
     <main className='p-5 bg-base-200 min-h-screen'>
-      <header>
+      <header className='w-full flex items-center justify-between'>
         <h1
           className={merge([
             bigShoulders.className,
@@ -70,11 +70,11 @@ export default function Home() {
           ])}>
           Coolors
         </h1>
-      </header>
 
-      <div className='flex justify-center w-full mt-5'>
-        <h2 className='text-2xl'>Dark winter</h2>
-      </div>
+        <h2 className='text-1xl btn btn-accent rounded-2xl btn-sm'>
+          Dark winter
+        </h2>
+      </header>
 
       <section className='w-full overflow-hidden mt-5'>
         <div

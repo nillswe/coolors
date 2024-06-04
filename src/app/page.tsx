@@ -38,20 +38,8 @@ export default function Home() {
       case 'all':
         setColorList(filterAll())
         break
-      case 'red':
-        setColorList(filterByColor('red'))
-        break
-      case 'blue':
-        setColorList(filterByColor('blue'))
-        break
-      case 'green':
-        setColorList(filterByColor('green'))
-        break
-      case 'purple':
-        setColorList(filterByColor('purple'))
-        break
-      case 'pink':
-        setColorList(filterByColor('pink'))
+      default:
+        setColorList(filterByColor(activeTab))
         break
     }
   }, [activeTab])
@@ -85,16 +73,19 @@ export default function Home() {
               key={filter}
               role='tab'
               className={merge([
-                'tab capitalize transition-all',
-                activeTab === filter && 'tab-active text-2xl font-bold',
+                'tab capitalize transition-all flex-1 font-semibold text-base-content/70',
+                activeTab === filter &&
+                  'tab-active text-2xl font-bold text-base-content',
               ])}
               onClick={() => setActiveTab(filter)}>
               {filter}
             </span>
           ))}
         </div>
+      </section>
 
-        <div className='bg-base-100 rounded-lg p-5 grid grid-cols-4 md:grid-cols-6 gap-2 mt-5'>
+      <section className='w-full flex'>
+        <div className='shadow-md bg-base-100 rounded-lg p-5 grid grid-cols-4 md:grid-cols-6 gap-2 mt-5 w-full'>
           {colorList.map(color => (
             <div
               key={color.hexadecimal}
